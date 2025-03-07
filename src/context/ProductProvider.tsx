@@ -1,4 +1,5 @@
-import { createContext, ReactElement, useState } from 'react'
+import { createContext, ReactElement, useEffect, useState } from 'react'
+
 
 export type ProductsType = {
     sku: string,
@@ -40,20 +41,21 @@ export const ProductsProvider = ({children}: ChildrenType): ReactElement =>{
 
     const [products, setProducts] = useState<ProductsType[]>(initState)
 
-    // useEffect(()=>{
-    //     const fetchProduct = async(): Promise<ProductsType[]> =>{
-    //         const data = await fetch('http://localhost:3500/')
-    //         .then((res)=> {return res.json()})
-    //         .catch((err)=>{
-    //             if (err instanceof Error) { console.log(err.message);
-    //             }
-    //         })
+    useEffect(()=>{
+        const fetchProduct = async(): Promise<ProductsType[]> =>{
+            const data = await fetch('http://localhost:3500/')
+            .then((res)=> {return res.json()})
+            .catch((err)=>{
+                if (err instanceof Error) { console.log(err.message);
+                }
+            })
 
-    //         return data
-    //     }
+            return data
+        }
 
-    //     fetchProduct().then(products => setProducts(products))
-    // },[])
+        fetchProduct().then(products => setProducts(products))
+    },[])
+
     return (
           <productContext.Provider value={{products}}>
              {children}

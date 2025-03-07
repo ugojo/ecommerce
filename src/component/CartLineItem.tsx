@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ChangeEvent, ReactElement } from 'react'
 import { CartItemType, ReducerActionType } from '../context/CartProvider'
 import { ReducerAction } from '../context/CartProvider'
 
