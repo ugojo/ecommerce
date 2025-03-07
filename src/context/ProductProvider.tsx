@@ -54,6 +54,7 @@ export const ProductsProvider = ({children}: ChildrenType): ReactElement =>{
         }
 
         fetchProduct().then(products => setProducts(products))
+        setProducts(products)
     },[])
 
     return (
