@@ -57,7 +57,6 @@ export const ProductsProvider = ({children}: ChildrenType): ReactElement =>{
     //    
     // },[])
 
-    setProducts(products)
 
     return (
           <productContext.Provider value={{products}}>
