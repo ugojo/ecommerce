@@ -4,7 +4,7 @@ import { ReactElement } from "react"
 import {getImageURL} from '../utlis/image-utlis'
 // import GetImgUrl from "./GetImg"
 // import item001 from '../assets/images/item0001.jpg'
-import item001 from '/Users/BUYPC COMPUTERS/Desktop/webapp/Ecomm/Ecommerce/public/item0001.jpg'
+
 
 
 type PropsType = {
